@@ -43,7 +43,7 @@ export const projects = [
     tools: ['Godot 4', 'Dialogic 2', 'JSON'],
     role: 'Development: gameplay systems, save/load functionality, and narrative state management.',
     demo: '',
-    source: '',
+    source: 'https://github.com/aldringeneroso/Unnamed-Fantasy-A-Promise-Kept',
   },
   {
     id: '02',
