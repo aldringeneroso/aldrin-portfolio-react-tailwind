@@ -67,8 +67,8 @@ function Portrait() {
         className="portrait-photo"
         src={profile.photoUrl}
         alt={`Portrait of ${profile.name}`}
-        width="3464"
-        height="4277"
+        width="928"
+        height="1147"
         decoding="async"
       />
       <span className="portrait-tag" aria-hidden="true">

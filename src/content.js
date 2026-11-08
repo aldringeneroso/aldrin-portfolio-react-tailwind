@@ -11,7 +11,7 @@ export const profile = {
   github: 'https://github.com/aldringeneroso',
   linkedin: 'https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/',
   resumeUrl: '/assets/aldrin-generoso-resume.pdf',
-  photoUrl: '/assets/aldrin-generoso-profile.jpeg',
+  photoUrl: '/assets/aldrin-generoso-profile.png',
 };
 
 export const skills = [

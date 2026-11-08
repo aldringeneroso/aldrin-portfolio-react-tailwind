@@ -23,7 +23,7 @@ npm run preview
 
 For direct email delivery, follow [the EmailJS setup guide](emails/README.md). The public EmailJS identifiers are configured in `src/App.jsx`; optional `VITE_EMAILJS_*` overrides are listed in `.env.example`. The receiving template sends to `aldringeneroso1@gmail.com`; the visitor's email is used for replies. No email password, private key, or OAuth token is stored in this project. Until the account settings are complete, the form shows a direct email link. No live email is sent as part of the production build.
 
-Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.jpeg` and displayed in the hero and About sections. The supplied project screenshots are `a-promise-kept.png` and `ai-floorplan-analysis.png`. All photos and screenshots retain their original colors.
+Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.png` and displayed in the hero and About sections. The supplied project screenshots are `a-promise-kept.png` and `ai-floorplan-analysis.png`. All photos and screenshots retain their original colors.
 
 Icons are local Font Awesome Free 7.3.1 SVG assets in `public/assets/icons/`, sourced from [Font Awesome](https://github.com/FortAwesome/Font-Awesome/tree/7.x/svgs). Their attribution comments and `LICENSE.txt` are included. Decorative icons beside visible labels are hidden from screen readers and inherit the current theme's text color.
 
