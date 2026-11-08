@@ -52,8 +52,8 @@ export const projects = [
     image: '/assets/ai-floorplan-analysis.png',
     imageAlt:
       'VED Electrical Services floor-plan analysis homepage with a wiring layout preview',
-    imageWidth: 1890,
-    imageHeight: 895,
+    imageWidth: 1868,
+    imageHeight: 872,
     description:
       'An AI-assisted floor-plan analysis and electrical planning application for VED Electrical Services. It supports uploads, review of detected rooms, walls, and electrical symbols, synchronized 2D/3D layouts, electrical routing, and material-based cost estimates.',
     tools: ['React', 'FastAPI', 'MySQL', 'OpenCV', 'Three.js'],

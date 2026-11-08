@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#122b32" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('portfolio-theme') === 'dark' ? 'dark' : 'light';
+      } catch {}
+    </script>
     <meta
       name="description"
-      content="Meet Aldrin E. Generoso, Software Engineer. Explore selected project concepts, skills, and contact information."
+      content="Aldrin E. Generoso, Software Engineer and Computer Science student. Explore game development, AI floor-plan analysis, skills, and contact information."
     />
     <title>Aldrin E. Generoso | Software Engineer</title>
   </head>

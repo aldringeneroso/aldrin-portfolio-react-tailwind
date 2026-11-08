@@ -24,7 +24,7 @@ Keep **To Email** fixed in the dashboard. The website does not supply a recipien
 The form supplies `name`, `email`, `message`, `title`, and `time`. The timestamp is shown in Philippine time. All visitor content uses escaped `{{variable}}` placeholders; retain the double braces. The message block preserves line breaks without accepting raw HTML.
 
 4. Save the template and note its **Template ID**. Find your **Service ID** under Email Services and **Public Key** under Account.
-5. The portfolio's public browser identifiers are configured in `src/App.jsx` so production builds do not need private credentials. The saved service is `service_rhr5g8e` and receiving template is `template_portfolio_contact`.
+5. The portfolio's public browser identifiers are configured in `src/components/ContactForm.jsx` so production builds do not need private credentials. The saved service is `service_rhr5g8e` and receiving template is `template_portfolio_contact`.
 6. To replace the EmailJS account, copy `.env.example` to `.env.local` and fill in all three public identifiers. Restart Vite after changing them. For deployment overrides, set the same three `VITE_EMAILJS_*` variables in your hosting project's environment settings and redeploy. Vite embeds these optional overrides during the build; a local `.env.local` file is not uploaded to Git.
 
 EmailJS's **Public Key** is designed for use in browser code, alongside the Service ID and Template ID. The private key, email password, and OAuth tokens are never placed in the project. See [EmailJS's public-key guidance](https://www.emailjs.com/docs/faq/is-it-okay-to-expose-my-public-key/).
