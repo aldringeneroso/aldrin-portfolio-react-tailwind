@@ -2,6 +2,22 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* Self-hosted Font Awesome Free 7.3.1 fonts; license in public/assets/icons. */
+@font-face {
+  font-family: 'Portfolio Icons Solid';
+  src: url('/assets/icons/fa-solid-900.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Portfolio Icons Brands';
+  src: url('/assets/icons/fa-brands-400.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
 :root {
   font-family: 'DM Sans', Arial, sans-serif;
   color-scheme: light;
@@ -329,8 +345,8 @@ nav a:focus-visible::after {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.actions .text-link > span {
-  font-size: 18px;
+.actions .action-icon {
+  font-size: 14px;
 }
 .socials {
   display: flex;
@@ -345,23 +361,39 @@ nav a:focus-visible::after {
   min-height: 44px;
   font-size: 11px;
 }
-.socials a > span:last-child {
-  margin-left: 2px;
+.socials .action-icon {
+  margin-left: 4px;
   color: var(--muted);
+  font-size: 11px;
 }
 .socials a:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 .icon {
-  display: inline-block;
-  width: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25em;
   height: 1em;
   flex-shrink: 0;
-  vertical-align: -0.125em;
-  background-color: currentColor;
-  -webkit-mask: var(--icon-url) center / contain no-repeat;
-  mask: var(--icon-url) center / contain no-repeat;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon--solid {
+  font-family: 'Portfolio Icons Solid';
+  font-weight: 900;
+}
+.icon--brands {
+  font-family: 'Portfolio Icons Brands';
+  font-weight: 400;
+}
+.action-icon {
+  font-size: 12px;
 }
 .hero-visual {
   position: relative;

@@ -29,7 +29,7 @@ For direct email delivery, follow [the EmailJS setup guide](emails/README.md). T
 
 Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.png` and displayed in the hero and About sections. The supplied project screenshots are `a-promise-kept.png` and `ai-floorplan-analysis.png`. All photos and screenshots retain their original colors.
 
-Icons are local Font Awesome Free 7.3.1 SVG assets in `public/assets/icons/`, sourced from [Font Awesome](https://github.com/FortAwesome/Font-Awesome/tree/7.x/svgs). Their attribution comments and `LICENSE.txt` are included. Decorative icons beside visible labels are hidden from screen readers and inherit the current theme's text color.
+Icons use self-hosted Font Awesome Free 7.3.1 solid and brand WOFF2 fonts in `public/assets/icons/`, sourced from [Font Awesome](https://github.com/FortAwesome/Font-Awesome/tree/7.3.1/webfonts). The site uses no SVG icons or SVG renderer. `LICENSE.txt` preserves the attribution and font license. The shared `Icon` component maps the used font glyphs; decorative icons beside visible labels are hidden from screen readers and inherit the current theme's text color. Navigation, external links, and downloads use matching Font Awesome action icons with consistent sizing and alignment.
 
 The AI Floorplan Analysis summary and technology tags are based on the [project README](https://github.com/aldringeneroso/ai-floorplan-analysis/blob/main/README.md), [30 October integration checkpoint](https://github.com/aldringeneroso/ai-floorplan-analysis/blob/main/docs/PUBLICATION_20261030.md), and frontend package manifest. No live demo URL has been supplied.
 

@@ -14,6 +14,7 @@ The portfolio adapts existing published designs and interaction patterns rather 
 - **Three.js:** the chrome sculpture, its fallback, and the dependency were removed at Aldrin's request.
 - [Pretext](https://github.com/chenglou/pretext): its documented preparation and line-layout APIs balance headings after the correct fonts load. Text is visible before enhancement, stays selectable, and has a single accessible text equivalent. ResizeObserver recalculates line layout. The library is loaded in a separate chunk.
 - **fal:** not used. Aldrin explicitly chose to omit fal imagery; no generated asset remains pending. The real portrait and full-color project screenshots are retained.
+- **Icons:** [Font Awesome's self-hosted webfont approach](https://docs.fontawesome.com/web/setup/host-yourself/webfonts) supplies solid action icons and brand logos using local WOFF2 files. All previous SVG assets and CSS masks are removed. Font Awesome's font license and attribution remain in `public/assets/icons/LICENSE.txt`.
 
 ## Review scope
 

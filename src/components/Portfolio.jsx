@@ -48,13 +48,16 @@ function SocialLinks() {
   return (
     <div className="socials" aria-label="Social profiles">
       <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-        <Icon name="linkedin-in" /> LinkedIn <span aria-hidden="true">↗</span>
+        <Icon name="linkedin-in" /> LinkedIn
+        <Icon name="arrow-up-right-from-square" className="action-icon" />
       </a>
       <a href={profile.github} target="_blank" rel="noopener noreferrer">
-        <Icon name="github" /> GitHub <span aria-hidden="true">↗</span>
+        <Icon name="github" /> GitHub
+        <Icon name="arrow-up-right-from-square" className="action-icon" />
       </a>
       <a href={profile.resumeUrl} download>
-        <Icon name="file-arrow-down" /> Résumé <span aria-hidden="true">↓</span>
+        <Icon name="file-lines" /> Résumé
+        <Icon name="download" className="action-icon" />
       </a>
     </div>
   );
@@ -126,10 +129,12 @@ export default function Portfolio() {
             </p>
             <div className="actions">
               <a className="button primary" href="#projects">
-                Explore my work <span aria-hidden="true">↘</span>
+                Explore my work
+                <Icon name="arrow-down" className="action-icon" />
               </a>
               <a className="text-link" href="#contact">
-                Let’s talk <span aria-hidden="true">↗</span>
+                Let’s talk
+                <Icon name="arrow-right" className="action-icon" />
               </a>
             </div>
             <SocialLinks />
@@ -169,7 +174,8 @@ export default function Portfolio() {
               B Hotel
             </span>
             <a href="#projects">
-              Scroll to discover <span aria-hidden="true">↓</span>
+              Scroll to discover
+              <Icon name="arrow-down" className="action-icon" />
             </a>
           </div>
         </section>
@@ -216,7 +222,10 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
               >
                 <Icon name="linkedin-in" /> Get to know me on LinkedIn{' '}
-                <span aria-hidden="true">↗</span>
+                <Icon
+                  name="arrow-up-right-from-square"
+                  className="action-icon"
+                />
               </a>
             </div>
           </div>
@@ -265,8 +274,8 @@ export default function Portfolio() {
               <BalancedText as="h2">Learning by doing.</BalancedText>
             </div>
             <a className="text-link" href={profile.resumeUrl} download>
-              <Icon name="file-arrow-down" /> Download résumé{' '}
-              <span aria-hidden="true">↓</span>
+              <Icon name="file-lines" /> Download résumé
+              <Icon name="download" className="action-icon" />
             </a>
           </div>
           <div className="journey-grid">
@@ -362,9 +371,14 @@ export default function Portfolio() {
                       <small>{label}</small>
                       <strong>{text}</strong>
                     </span>
-                    <span className="contact-arrow" aria-hidden="true">
-                      ↗
-                    </span>
+                    <Icon
+                      name={
+                        url.startsWith('https:')
+                          ? 'arrow-up-right-from-square'
+                          : 'arrow-right'
+                      }
+                      className="action-icon contact-arrow"
+                    />
                   </a>
                 ))}
               </div>
@@ -381,7 +395,8 @@ export default function Portfolio() {
         </a>
         <span>© {new Date().getFullYear()} Aldrin E. Generoso</span>
         <a className="text-link" href="#home">
-          Back to the top <span aria-hidden="true">↑</span>
+          Back to the top
+          <Icon name="arrow-up" className="action-icon" />
         </a>
       </footer>
     </div>

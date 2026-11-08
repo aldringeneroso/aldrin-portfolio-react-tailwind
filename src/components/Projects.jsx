@@ -87,7 +87,10 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 >
                   <Icon name="github" /> Explore the code{' '}
-                  <span aria-hidden="true">↗</span>
+                  <Icon
+                    name="arrow-up-right-from-square"
+                    className="action-icon"
+                  />
                 </a>
                 {project.demo && (
                   <a
@@ -95,7 +98,11 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live project <Icon name="arrow-up-right-from-square" />
+                    Live project
+                    <Icon
+                      name="arrow-up-right-from-square"
+                      className="action-icon"
+                    />
                   </a>
                 )}
               </div>
