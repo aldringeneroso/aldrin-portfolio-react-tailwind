@@ -1,7 +1,7 @@
 """Build the one-page resume using portfolio content and the Jake's Resume layout.
 
 Layout reference: https://github.com/jakegut/resume (MIT).
-Use the bundled Python runtime with reportlab. No experience dates or duties are inferred.
+Requires Python, ReportLab, and Node.js.
 """
 
 import json

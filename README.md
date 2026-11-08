@@ -6,9 +6,15 @@
 
 Turning ideas into experiences.
 
-[LinkedIn](https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/) · [GitHub](https://github.com/aldringeneroso) · [Email](mailto:aldringeneroso1@gmail.com) · [Résumé](public/assets/aldrin-generoso-resume.pdf)
+[![LinkedIn][badge-linkedin]](https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/)
+[![GitHub][badge-github]](https://github.com/aldringeneroso)
+[![Email][badge-email]](mailto:aldringeneroso1@gmail.com)
+[![Download résumé][badge-resume]](public/assets/aldrin-generoso-resume.pdf)
 
-**React 19 / JavaScript / Vite 8 / Tailwind CSS 4**
+![React 19](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-20232A?style=flat-square&logo=javascript&logoColor=F7DF1E)
+![Vite 8](https://img.shields.io/badge/Vite_8-20232A?style=flat-square&logo=vite&logoColor=BD34FE)
+![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS_4-20232A?style=flat-square&logo=tailwindcss&logoColor=38BDF8)
 
 </div>
 
@@ -38,7 +44,7 @@ A visual novel and action-RPG hybrid with branching narrative events. Modular sy
 
 **Godot 4 · Dialogic 2 · JSON**
 
-[Explore the repository](https://github.com/aldringeneroso/Unnamed-Fantasy-A-Promise-Kept)
+[![View on GitHub][badge-source]](https://github.com/aldringeneroso/Unnamed-Fantasy-A-Promise-Kept)
 
 ### 02 / AI Floorplan Analysis
 
@@ -48,7 +54,7 @@ An AI-assisted floor-plan analysis and electrical planning application for VED E
 
 **React · FastAPI · MySQL · OpenCV · Three.js**
 
-[Explore the repository](https://github.com/aldringeneroso/ai-floorplan-analysis)
+[![View on GitHub][badge-source]](https://github.com/aldringeneroso/ai-floorplan-analysis)
 
 ## Portfolio tech stack
 
@@ -81,7 +87,9 @@ npm run preview
 
 The build is written to `dist/`. Vercel configuration is included in [vercel.json](vercel.json).
 
-## Make it your own
+## Updating the portfolio
+
+This portfolio grows with my work. New projects, content, and design updates can be added through the files below.
 
 | Update                                                    | Location                                                           |
 | --------------------------------------------------------- | ------------------------------------------------------------------ |
@@ -122,6 +130,7 @@ Review the generated PDF before publishing. The site download remains `/assets/a
 - **Résumé layout:** adapted from [Jake Gutierrez’s Resume](https://github.com/jakegut/resume).
 - **Contact notification:** adapted from [Lee Munroe’s responsive HTML email template](https://github.com/leemunroe/responsive-html-email-template).
 - **Iconography:** [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome/tree/7.3.1/webfonts), self-hosted as webfonts.
+- **README badges:** [Shields.io](https://shields.io/badges/static-badge), with SVG badge images used only in this README.
 
 See [design references](docs/DESIGN_REFERENCES.md), [layout licenses](docs/licenses/), the [email template license](emails/LICENSE.txt), and the [Font Awesome license](public/assets/icons/LICENSE.txt) for attribution and implementation details.
 
@@ -131,6 +140,13 @@ See [design references](docs/DESIGN_REFERENCES.md), [layout licenses](docs/licen
 
 **Have a project, opportunity, or idea in mind?**
 
-[Let’s connect on LinkedIn](https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/) · [Send an email](mailto:aldringeneroso1@gmail.com)
+[![LinkedIn][badge-linkedin]](https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/)
+[![Email][badge-email]](mailto:aldringeneroso1@gmail.com)
 
 </div>
+
+[badge-github]: https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white
+[badge-email]: https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[badge-source]: https://img.shields.io/badge/View_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white
+[badge-linkedin]: https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTEwMC4zIDQ0OGwtOTIuOSAwIDAtMjk5LjEgOTIuOSAwIDAgMjk5LjF6TTUzLjggMTA4LjFDMjQuMSAxMDguMSAwIDgzLjUgMCA1My44IDAgMzkuNSA1LjcgMjUuOSAxNS44IDE1LjhzMjMuOC0xNS44IDM4LTE1LjggMjcuOSA1LjcgMzggMTUuOCAxNS44IDIzLjggMTUuOCAzOGMwIDI5LjctMjQuMSA1NC4zLTUzLjggNTQuM3pNNDQ3LjkgNDQ4bC05Mi43IDAgMC0xNDUuNmMwLTM0LjctLjctNzkuMi00OC4zLTc5LjItNDguMyAwLTU1LjcgMzcuNy01NS43IDc2LjdsMCAxNDguMS05Mi44IDAgMC0yOTkuMSA4OS4xIDAgMCA0MC44IDEuMyAwYzEyLjQtMjMuNSA0Mi43LTQ4LjMgODcuOS00OC4zIDk0IDAgMTExLjMgNjEuOSAxMTEuMyAxNDIuM2wwIDE2NC4zLS4xIDB6Ii8%2BPC9zdmc%2B
+[badge-resume]: https://img.shields.io/badge/Resume-333333?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTAgNjRDMCAyOC43IDI4LjcgMCA2NCAwTDIxMy41IDBjMTcgMCAzMy4zIDYuNyA0NS4zIDE4LjdMMzY1LjMgMTI1LjNjMTIgMTIgMTguNyAyOC4zIDE4LjcgNDUuM0wzODQgNDQ4YzAgMzUuMy0yOC43IDY0LTY0IDY0TDY0IDUxMmMtMzUuMyAwLTY0LTI4LjctNjQtNjRMMCA2NHptMjA4LTUuNWwwIDkzLjVjMCAxMy4zIDEwLjcgMjQgMjQgMjRMMzI1LjUgMTc2IDIwOCA1OC41ek0xNzUgNDQxYzkuNCA5LjQgMjQuNiA5LjQgMzMuOSAwbDY0LTY0YzkuNC05LjQgOS40LTI0LjYgMC0zMy45cy0yNC42LTkuNC0zMy45IDBsLTIzIDIzIDAtODYuMWMwLTEzLjMtMTAuNy0yNC0yNC0yNHMtMjQgMTAuNy0yNCAyNGwwIDg2LjEtMjMtMjNjLTkuNC05LjQtMjQuNi05LjQtMzMuOSAwcy05LjQgMjQuNiAwIDMzLjlsNjQgNjR6Ii8%2BPC9zdmc%2B

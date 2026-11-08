@@ -1,4 +1,4 @@
-// Portfolio details supplied by Aldrin; floor-plan project summary verified from its repository.
+// Portfolio profile, skills, featured projects, and education.
 export const profile = {
   name: 'Aldrin E. Generoso',
   role: 'Software Engineer',

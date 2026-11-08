@@ -31,7 +31,7 @@ EmailJS's **Public Key** is designed for use in browser code, alongside the Serv
 
 The form is enabled only when all three identifiers exist. Otherwise it offers a direct email link. During a send, controls are disabled to avoid duplicate requests. Failed requests keep the message, and successful requests clear it. The SDK throttles repeated sends for ten seconds in the browser; this does not replace EmailJS's service-side limits.
 
-EmailJS's free plan currently includes **200 requests per month and two templates**. This setup uses one template and one request per submission. Account and provider limits still apply. No live test email is sent during setup; you can test delivery yourself.
+This setup uses one template and one request per submission. Check [EmailJS's current plan limits](https://www.emailjs.com/pricing/) before publishing, and verify delivery using your connected service.
 
 ## References
 
