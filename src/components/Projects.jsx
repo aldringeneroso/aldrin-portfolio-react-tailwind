@@ -3,7 +3,8 @@ import { projects } from '../content';
 import BalancedText from './BalancedText';
 import Icon from './Icon';
 
-// Alternating 12-column composition adapted from Brittany Chiang's v4 featured.js.
+// Alternating project composition adapted from Brittany Chiang's v4 featured.js.
+// Separate columns keep text and links clear of the screenshots.
 // MIT attribution: docs/licenses/brittany-chiang-MIT.txt.
 export default function Projects() {
   return (

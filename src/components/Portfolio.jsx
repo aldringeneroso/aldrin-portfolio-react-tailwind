@@ -1,37 +1,10 @@
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { profile, projects, timeline, skills } from '../content';
 import BalancedText from './BalancedText';
 import ContactForm from './ContactForm';
 import Icon from './Icon';
 import Projects from './Projects';
 import usePortfolioMotion from '../hooks/usePortfolioMotion';
-
-const Sculpture = lazy(() => import('./Sculpture'));
-
-function SculpturePreview() {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    if ('requestIdleCallback' in window) {
-      const id = window.requestIdleCallback(() => setReady(true), {
-        timeout: 1200,
-      });
-      return () => window.cancelIdleCallback(id);
-    }
-    const id = setTimeout(() => setReady(true), 400);
-    return () => clearTimeout(id);
-  }, []);
-  return ready ? (
-    <Suspense
-      fallback={
-        <div className="sculpture sculpture-fallback" aria-hidden="true" />
-      }
-    >
-      <Sculpture />
-    </Suspense>
-  ) : (
-    <div className="sculpture sculpture-fallback" aria-hidden="true" />
-  );
-}
 
 function ThemeToggle() {
   const [dark, setDark] = useState(() => {
@@ -180,12 +153,8 @@ export default function Portfolio() {
               />
               <figcaption>
                 <span>Hi, I’m Aldrin.</span>
-                <span aria-hidden="true">↗</span>
               </figcaption>
             </figure>
-            <div className="sculpture-frame">
-              <SculpturePreview />
-            </div>
             <div
               className="visual-coordinate bottom-coordinate"
               aria-hidden="true"
@@ -280,9 +249,6 @@ export default function Portfolio() {
                     </li>
                   ))}
                 </ul>
-                <span className="card-corner" aria-hidden="true">
-                  ↗
-                </span>
               </article>
             ))}
           </div>

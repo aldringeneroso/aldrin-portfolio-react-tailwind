@@ -15,7 +15,7 @@ npm run preview
 ```
 
 - `src/App.jsx`: entry point for the portfolio composition in `src/components/Portfolio.jsx`.
-- `src/components/`: portfolio sections, preserved EmailJS form, Pretext heading layout, and the lazy-loaded Three.js sculpture.
+- `src/components/`: portfolio sections, preserved EmailJS form, and Pretext heading layout.
 - `src/hooks/usePortfolioMotion.js`: scoped GSAP/ScrollTrigger motion with reduced-motion support.
 - `src/index.css`: Tailwind CSS v4 import and the responsive black-and-white editorial design.
 - `src/content.js`: biography, skills, projects, education, links.
@@ -39,4 +39,4 @@ The résumé now matches both featured projects, includes their actual repositor
 
 Rebuild the résumé with Python and ReportLab using `python scripts/build-resume.py`. Its source reads portfolio content directly and retains the supplied contact number. Preview the generated PDF after changing content. The download URL remains `/assets/aldrin-generoso-resume.pdf`.
 
-fal is installed and connected, but the optional paid background image was skipped at Aldrin's request. No fal media is generated or required by the site. GSAP, Three.js, and Pretext are implemented with CSS/text fallbacks for their enhancements. No automated tests are added or run. Browser visual review was not completed because Computer Use could not verify the active browser URL.
+fal is not used or required by the site. The chrome sculpture and Three.js dependency were removed at Aldrin's request. Featured projects use separate image and text columns on desktop and stack on smaller screens; titles, descriptions, technology tags, and links share a left alignment. Non-interactive arrows on the portrait and skill cards were removed. The logo remains unchanged. GSAP and Pretext retain their CSS/text fallbacks. No automated tests are added or run.
