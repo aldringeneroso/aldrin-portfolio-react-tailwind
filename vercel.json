@@ -1,21 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "app": {
-      "root": ".",
-      "framework": "vite"
-    },
-    "aldrin-portfolio-react-tailwind": {
-      "root": "aldrin-portfolio-react-tailwind",
-      "framework": "vite"
+  "framework": "vite",
+  "redirects": [
+    {
+      "source": "/aldrin-generoso-resume.pdf",
+      "destination": "/assets/aldrin-generoso-resume.pdf",
+      "permanent": true
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": {
-        "service": "app"
-      }
+      "destination": "/index.html"
     }
   ]
 }
