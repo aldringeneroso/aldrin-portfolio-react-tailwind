@@ -125,10 +125,14 @@ function ThemeToggle() {
 function Portrait() {
   return (
     <div className="portrait">
-      <span className="initials" aria-hidden="true">
-        AG
-      </span>
-      <small>PROFILE PHOTO TO FOLLOW</small>
+      <img
+        className="portrait-photo"
+        src={profile.photoUrl}
+        alt={`Portrait of ${profile.name}`}
+        width="1208"
+        height="1188"
+        decoding="async"
+      />
       <span className="portrait-tag" aria-hidden="true">
         &lt;/&gt;
       </span>

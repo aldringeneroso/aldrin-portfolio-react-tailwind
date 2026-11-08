@@ -20,8 +20,8 @@ npm run preview
 - `public/assets/`: static assets, including the supplied résumé PDF (unchanged).
 - `vercel.json`: deployment settings for the root Vite app; the previous résumé URL redirects to its new asset location.
 
-Keep static downloads and future photos in `public/assets/` and reference them with `/assets/` URLs. The current portrait and project illustrations are rendered by React components in `src/App.jsx`.
+Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.png` and displayed in the hero and About sections with grayscale styling. Project illustrations are rendered by React components in `src/App.jsx`.
 
 The project runs from this folder. `node_modules/` contains installed dependencies and `dist/` contains generated production output; both are ignored by Git.
 
-The MIS internship at B Hotel is included without invented dates or responsibilities. The supplied PDF predates that update. Photo is an initials placeholder. Project previews are illustrations. Contact form opens an email draft; it does not send directly. No Sites account or hosting credentials are required.
+The MIS internship at B Hotel is included without invented dates or responsibilities. The supplied PDF predates that update. Project previews are illustrations. Contact form opens an email draft; it does not send directly. No Sites account or hosting credentials are required.
