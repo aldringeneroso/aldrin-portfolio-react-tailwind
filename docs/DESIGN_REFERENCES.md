@@ -13,11 +13,7 @@ The portfolio adapts existing published designs and interaction patterns rather 
 - [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/): scoped hero entrance, scroll-triggered section reveals, project-image scrub, page progress, and scroll-driven sculpture rotation. Cleanup reverts animations and triggers on unmount. `prefers-reduced-motion` disables these effects.
 - [Three.js](https://threejs.org/): a chrome torus-knot model built from the documented [TorusKnotGeometry](https://threejs.org/docs/#api/en/geometries/TorusKnotGeometry) and the official [RoomEnvironment example](https://github.com/mrdoob/three.js/blob/dev/examples/jsm/environments/RoomEnvironment.js). The renderer loads after the browser is idle, caps pixel ratio, pauses offscreen and in background tabs, and disposes GPU resources. A simple decorative fallback remains when WebGL is unavailable.
 - [Pretext](https://github.com/chenglou/pretext): its documented preparation and line-layout APIs balance headings after the correct fonts load. Text is visible before enhancement, stays selectable, and has a single accessible text equivalent. ResizeObserver recalculates line layout. The library is loaded in a separate chunk.
-- **fal:** requested for a decorative landing-page background. The integration now reports **installed**, but its generation tools are not exposed to this active chat turn and no `FAL_KEY` exists in the workspace. Computer Use stopped during setup because it could not reliably determine the active browser URL. No fal image or video has been generated or presented as complete. The real portrait and both project screenshots are used as supplied.
-
-## Asset brief for the pending fal background
-
-A quiet, abstract studio-paper background with soft sculptural folds, graphite shadows, and large clear areas; monochrome, understated, editorial. No text, logos, people, devices, or fabricated project screenshots. Generate one landscape still and store the selected asset in `public/assets/` once fal is connected. It is decoration behind the hero composition, not a replacement for the real portrait. A looping background video is unnecessary for this layout.
+- **fal:** the integration is installed and connected. After reviewing the paid-generation requirement, Aldrin chose to skip the background image. No fal media was generated. The existing hero composition, real portrait, full-color project screenshots, and Three.js sculpture are retained; no generated asset remains pending.
 
 ## Review scope
 

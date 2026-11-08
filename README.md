@@ -23,7 +23,7 @@ npm run preview
 - `vercel.json`: deployment settings for the root Vite app; the previous résumé URL redirects to its new asset location.
 - `emails/`: receiving-email HTML adapted from Lee Munroe’s responsive template, its license, and EmailJS setup instructions.
 - `scripts/build-resume.py`: reproducible résumé authoring using profile, project, education, and skill data from `src/content.js`.
-- `docs/DESIGN_REFERENCES.md`: the existing designs adapted for this update, attribution, library behavior, and the pending fal asset.
+- `docs/DESIGN_REFERENCES.md`: the existing designs adapted for this update, attribution, library behavior, and the decision to omit optional fal imagery.
 
 For direct email delivery, follow [the EmailJS setup guide](emails/README.md). The public EmailJS identifiers are configured in `src/components/ContactForm.jsx`; optional `VITE_EMAILJS_*` overrides are listed in `.env.example`. The receiving template sends to `aldringeneroso1@gmail.com`; the visitor's email is used for replies. No email password, private key, or OAuth token is stored in this project. No live email is sent as part of the production build.
 
@@ -39,4 +39,4 @@ The résumé now matches both featured projects, includes their actual repositor
 
 Rebuild the résumé with Python and ReportLab using `python scripts/build-resume.py`. Its source reads portfolio content directly and retains the supplied contact number. Preview the generated PDF after changing content. The download URL remains `/assets/aldrin-generoso-resume.pdf`.
 
-The requested fal integration is now installed, but its generation tools are not available in this active chat turn. Computer Use also stopped during setup because it could not verify the active browser URL. No fal-generated asset is included yet. GSAP, Three.js, and Pretext are implemented with CSS/text fallbacks for their enhancements. No automated tests are added or run.
+fal is installed and connected, but the optional paid background image was skipped at Aldrin's request. No fal media is generated or required by the site. GSAP, Three.js, and Pretext are implemented with CSS/text fallbacks for their enhancements. No automated tests are added or run. Browser visual review was not completed because Computer Use could not verify the active browser URL.
