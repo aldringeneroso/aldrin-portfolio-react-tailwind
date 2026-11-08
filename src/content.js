@@ -36,8 +36,8 @@ export const projects = [
     category: 'GAME DEVELOPMENT',
     image: '/assets/a-promise-kept.png',
     imageAlt: 'A Promise Kept title screen with a colorful pixel-art koi pond',
-    imageWidth: 1281,
-    imageHeight: 753,
+    imageWidth: 1280,
+    imageHeight: 722,
     description:
       'A visual novel and action-RPG hybrid built with Godot 4. Modular systems handle health, economy, affection, and day progression, with JSON-based multi-slot saves and branching narrative events.',
     tools: ['Godot 4', 'Dialogic 2', 'JSON'],
