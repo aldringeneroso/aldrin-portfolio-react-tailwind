@@ -20,8 +20,12 @@ npm run preview
 - `public/assets/`: static assets, including the supplied résumé PDF (unchanged).
 - `vercel.json`: deployment settings for the root Vite app; the previous résumé URL redirects to its new asset location.
 
-Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.png` and displayed in the hero and About sections with grayscale styling. Project illustrations are rendered by React components in `src/App.jsx`.
+Keep static downloads and photos in `public/assets/` and reference them with `/assets/` URLs. The supplied profile photo is saved as `public/assets/aldrin-generoso-profile.jpeg` and displayed in the hero and About sections. The supplied project screenshots are `a-promise-kept.png` and `ai-floorplan-analysis.png`. All photos and screenshots retain their original colors.
+
+Icons are local Font Awesome Free 7.3.1 SVG assets in `public/assets/icons/`, sourced from [Font Awesome](https://github.com/FortAwesome/Font-Awesome/tree/7.x/svgs). Their attribution comments and `LICENSE.txt` are included. Decorative icons beside visible labels are hidden from screen readers and inherit the current theme's text color.
+
+The AI Floorplan Analysis summary and technology tags are based on the [project README](https://github.com/aldringeneroso/ai-floorplan-analysis/blob/main/README.md), [30 October integration checkpoint](https://github.com/aldringeneroso/ai-floorplan-analysis/blob/main/docs/PUBLICATION_20261030.md), and frontend package manifest. No live demo URL has been supplied.
 
 The project runs from this folder. `node_modules/` contains installed dependencies and `dist/` contains generated production output; both are ignored by Git.
 
-The MIS internship at B Hotel is included without invented dates or responsibilities. The supplied PDF predates that update. Project previews are illustrations. Contact form opens an email draft; it does not send directly. No Sites account or hosting credentials are required.
+The MIS internship at B Hotel is included without invented dates or responsibilities. The supplied PDF predates that update. Contact form opens an email draft; it does not send directly. No Sites account or hosting credentials are required.

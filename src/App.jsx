@@ -1,88 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { profile, projects, timeline } from './content';
 
-function ProjectArt({ kind }) {
+function Icon({ name, className = '' }) {
   return (
-    <svg
-      className={`project-art ${kind}`}
-      viewBox="0 0 600 360"
-      role="img"
-      aria-label={`${kind} illustrative project preview`}
-    >
-      <rect x="65" y="46" width="470" height="275" rx="12" fill="#f9faf6" />
-      <path d="M65 82h470" stroke="#dce3de" />
-      <circle cx="84" cy="65" r="4" fill="#7f9b91" />
-      <circle cx="99" cy="65" r="4" fill="#bac8bd" />
-      <circle cx="114" cy="65" r="4" fill="#d8dfd6" />
-      {kind === 'spatial' ? (
-        <g fill="none" stroke="#496c63" strokeWidth="5">
-          <path d="M120 120h350v155H120zM275 120v155M120 200h155M360 120v85h110" />
-          <path d="M150 145h90v30h-90zM305 230h125" stroke="#abc5b3" />
-          <circle cx="320" cy="165" r="12" stroke="#cd9759" />
-          <circle cx="200" cy="238" r="10" stroke="#cd9759" />
-        </g>
-      ) : kind === 'tasks' ? (
-        <g>
-          {[0, 1, 2].map((n) => (
-            <g key={n}>
-              <rect
-                x={93 + n * 145}
-                y="105"
-                width="125"
-                height="185"
-                rx="6"
-                fill={['#e8eee5', '#e8ecec', '#f0e7dc'][n]}
-              />
-              <rect
-                x={106 + n * 145}
-                y="121"
-                width="65"
-                height="7"
-                rx="3"
-                fill="#839b8c"
-              />
-              {[0, 1].map((k) => (
-                <g key={k}>
-                  <rect
-                    x={104 + n * 145}
-                    y={147 + k * 65}
-                    width="103"
-                    height="52"
-                    rx="5"
-                    fill="white"
-                  />
-                  <path
-                    d={`M${116 + n * 145} ${163 + k * 65}h65m-65 12h42`}
-                    stroke="#b3c2b8"
-                    strokeWidth="5"
-                  />
-                </g>
-              ))}
-            </g>
-          ))}
-        </g>
-      ) : (
-        <g>
-          <rect x="93" y="103" width="110" height="190" rx="5" fill="#e9eee7" />
-          <path
-            d="M112 130h65m-65 23h45m-45 24h56"
-            stroke="#a0b5a7"
-            strokeWidth="8"
-          />
-          {[70, 105, 87, 140, 120, 165].map((h, n) => (
-            <rect
-              key={n}
-              x={231 + n * 44}
-              y={285 - h}
-              width="25"
-              height={h}
-              rx="4"
-              fill={n === 5 ? '#d6a66d' : '#698e7d'}
-            />
-          ))}
-        </g>
-      )}
-    </svg>
+    <span
+      className={`icon ${className}`.trim()}
+      style={{ '--icon-url': `url('/assets/icons/${name}.svg')` }}
+      aria-hidden="true"
+    />
   );
 }
 
@@ -129,12 +54,12 @@ function Portrait() {
         className="portrait-photo"
         src={profile.photoUrl}
         alt={`Portrait of ${profile.name}`}
-        width="1208"
-        height="1188"
+        width="3464"
+        height="4277"
         decoding="async"
       />
       <span className="portrait-tag" aria-hidden="true">
-        &lt;/&gt;
+        <Icon name="code" />
       </span>
     </div>
   );
@@ -282,17 +207,20 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn ↗
+                <Icon name="linkedin-in" />
+                LinkedIn
               </a>
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub ↗
+                <Icon name="github" />
+                GitHub
               </a>
               <a href={profile.resumeUrl} download>
-                Résumé ↓
+                <Icon name="file-arrow-down" />
+                Résumé
               </a>
             </div>
           </div>
@@ -362,7 +290,15 @@ function App() {
           <div className="projects-grid grid grid-cols-1 min-[621px]:grid-cols-2 gap-5">
             {projects.map((project) => (
               <article className="project" key={project.id}>
-                <ProjectArt kind={project.style} />
+                <img
+                  className="project-image"
+                  src={project.image}
+                  alt={project.imageAlt}
+                  width={project.imageWidth}
+                  height={project.imageHeight}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="project-body">
                   <p className="eyebrow">{project.category}</p>
                   <h3>{project.title}</h3>
@@ -380,7 +316,7 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Live demo ↗
+                        Live demo <Icon name="arrow-up-right-from-square" />
                       </a>
                     ) : (
                       <span>Demo unavailable</span>
@@ -391,7 +327,7 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        View code ↗
+                        <Icon name="github" /> View code
                       </a>
                     ) : (
                       <a
@@ -399,7 +335,7 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        GitHub profile ↗
+                        <Icon name="github" /> GitHub profile
                       </a>
                     )}
                   </div>
@@ -407,10 +343,6 @@ function App() {
               </article>
             ))}
           </div>
-          <p className="caption">
-            Concept illustrations shown above; actual project screenshots and
-            project-specific links have not been provided.
-          </p>
         </section>
         <section id="education">
           <p className="eyebrow">04 — My journey</p>
@@ -448,8 +380,11 @@ function App() {
                 </article>
                 <article>
                   <span className="date">ACADEMIC PROJECT</span>
-                  <h4>Web application development</h4>
-                  <p>Design and implementation of a queue management system.</p>
+                  <h4>AI floor-plan analysis</h4>
+                  <p>
+                    Floor-plan review, 2D/3D layouts, and electrical planning
+                    for VED Electrical Services.
+                  </p>
                 </article>
               </div>
             </div>
@@ -467,7 +402,7 @@ function App() {
                   ))}
               </div>
               <a className="button" href={profile.resumeUrl} download>
-                Download résumé ↓
+                <Icon name="file-arrow-down" /> Download résumé
               </a>
             </div>
           </div>
@@ -488,15 +423,20 @@ function App() {
               </p>
               <div className="contact-list">
                 {[
-                  ['@', 'Email', `mailto:${profile.email}`, profile.email],
                   [
-                    '</>',
+                    'envelope',
+                    'Email',
+                    `mailto:${profile.email}`,
+                    profile.email,
+                  ],
+                  [
+                    'github',
                     'GitHub',
                     profile.github,
                     'github.com/aldringeneroso',
                   ],
                   [
-                    'in',
+                    'linkedin-in',
                     'LinkedIn',
                     profile.linkedin,
                     'Connect with Aldrin on LinkedIn',
@@ -513,11 +453,13 @@ function App() {
                     }
                   >
                     <span className="contact-icon" aria-hidden="true">
-                      {icon}
+                      <Icon name={icon} />
                     </span>
                     <span>
                       <small>{label}</small>
-                      <strong>{text} ↗</strong>
+                      <strong>
+                        {text} <Icon name="arrow-up-right-from-square" />
+                      </strong>
                     </span>
                   </a>
                 ))}

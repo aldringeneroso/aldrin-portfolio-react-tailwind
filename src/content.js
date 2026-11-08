@@ -1,4 +1,4 @@
-// Portfolio details supplied in Aldrin’s résumé. Project-specific URLs remain unpublished.
+// Portfolio details supplied by Aldrin; floor-plan project summary verified from its repository.
 export const profile = {
   name: 'Aldrin E. Generoso',
   role: 'Software Engineer',
@@ -11,7 +11,7 @@ export const profile = {
   github: 'https://github.com/aldringeneroso',
   linkedin: 'https://www.linkedin.com/in/aldrin-esmeralda-generoso-633b1a416/',
   resumeUrl: '/assets/aldrin-generoso-resume.pdf',
-  photoUrl: '/assets/aldrin-generoso-profile.png',
+  photoUrl: '/assets/aldrin-generoso-profile.jpeg',
 };
 
 export const skills = [
@@ -34,7 +34,10 @@ export const projects = [
     id: '01',
     title: 'Unnamed Fantasy: A Promise Kept',
     category: 'GAME DEVELOPMENT',
-    style: 'tasks',
+    image: '/assets/a-promise-kept.png',
+    imageAlt: 'A Promise Kept title screen with a colorful pixel-art koi pond',
+    imageWidth: 1281,
+    imageHeight: 753,
     description:
       'A visual novel and action-RPG hybrid built with Godot 4. Modular systems handle health, economy, affection, and day progression, with JSON-based multi-slot saves and branching narrative events.',
     tools: ['Godot 4', 'Dialogic 2', 'JSON'],
@@ -44,15 +47,19 @@ export const projects = [
   },
   {
     id: '02',
-    title: 'Queuing System',
-    category: 'WEB APPLICATION',
-    style: 'charts',
+    title: 'AI Floorplan Analysis',
+    category: 'AI & WEB APPLICATION',
+    image: '/assets/ai-floorplan-analysis.png',
+    imageAlt:
+      'VED Electrical Services floor-plan analysis homepage with a wiring layout preview',
+    imageWidth: 1890,
+    imageHeight: 895,
     description:
-      'A full-stack, web-based queue management system designed to streamline customer traffic and reduce wait times for business establishments.',
-    tools: ['Full-stack web development'],
-    role: 'Development: system design and implementation.',
+      'An AI-assisted floor-plan analysis and electrical planning application for VED Electrical Services. It supports uploads, review of detected rooms, walls, and electrical symbols, synchronized 2D/3D layouts, electrical routing, and material-based cost estimates.',
+    tools: ['React', 'FastAPI', 'MySQL', 'OpenCV', 'Three.js'],
+    role: 'Project focus: computer vision, interactive 2D/3D editing, and electrical planning workflows.',
     demo: '',
-    source: '',
+    source: 'https://github.com/aldringeneroso/ai-floorplan-analysis',
   },
 ];
 
