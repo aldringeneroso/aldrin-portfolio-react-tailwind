@@ -1,5 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { profile, projects, timeline } from './content';
+
+// Public browser identifiers; the recipient is fixed in the EmailJS template.
+const emailSettings = {
+  serviceId:
+    import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim() || 'service_rhr5g8e',
+  templateId:
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim() ||
+    'template_portfolio_contact',
+  publicKey:
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim() || '0Y9oXmWf5gXz_QP86',
+};
+const emailReady = Object.values(emailSettings).every(Boolean);
 
 function Icon({ name, className = '' }) {
   return (
@@ -67,22 +80,63 @@ function Portrait() {
 
 function ContactForm() {
   const [status, setStatus] = useState('');
-  function submit(event) {
+  const [sending, setSending] = useState(false);
+  const inFlight = useRef(false);
+
+  async function submit(event) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(
-      `Portfolio inquiry from ${String(data.get('name')).trim()}`,
-    );
-    const body = encodeURIComponent(
-      `${String(data.get('message')).trim()}\n\nFrom: ${String(data.get('name')).trim()}\nReply to: ${String(data.get('email')).trim()}`,
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setStatus(
-      'Email draft requested. Complete sending in your email app. You can also use the Email link.',
-    );
+    if (inFlight.current || !emailReady) return;
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const message = String(data.get('message') || '').trim();
+
+    if (!name || !message) {
+      setStatus('Please enter your name and a message.');
+      return;
+    }
+
+    inFlight.current = true;
+    setSending(true);
+    setStatus('');
+
+    try {
+      await emailjs.send(
+        emailSettings.serviceId,
+        emailSettings.templateId,
+        {
+          name,
+          email,
+          message,
+          title: 'Portfolio inquiry',
+          time: `${new Date().toLocaleString('en-PH', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'Asia/Manila',
+          })} PHT`,
+        },
+        {
+          publicKey: emailSettings.publicKey,
+          limitRate: { id: 'portfolio-contact', throttle: 10000 },
+        },
+      );
+      form.reset();
+      setStatus('Your message has been sent. Thank you for reaching out!');
+    } catch (error) {
+      setStatus(
+        error?.status === 429
+          ? 'Please wait a moment before sending another message.'
+          : 'Your message could not be sent. Please try again or email me directly.',
+      );
+    } finally {
+      inFlight.current = false;
+      setSending(false);
+    }
   }
   return (
-    <form className="contact-form" onSubmit={submit}>
+    <form className="contact-form" onSubmit={submit} aria-busy={sending}>
       <h3>Send a message</h3>
       <label htmlFor="name">
         Name
@@ -93,6 +147,7 @@ function ContactForm() {
           placeholder="Your name"
           required
           maxLength={100}
+          disabled={sending}
         />
       </label>
       <label htmlFor="email">
@@ -105,6 +160,7 @@ function ContactForm() {
           placeholder="you@example.com"
           required
           maxLength={200}
+          disabled={sending}
         />
       </label>
       <label htmlFor="message">
@@ -115,14 +171,21 @@ function ContactForm() {
           placeholder="Tell me about your project or opportunity…"
           required
           maxLength={1800}
+          disabled={sending}
         />
       </label>
-      <button className="button primary" type="submit">
-        Open email draft <span>→</span>
+      <button
+        className="button primary"
+        type="submit"
+        disabled={sending || !emailReady}
+      >
+        <Icon name="envelope" /> {sending ? 'Sending…' : 'Send message'}
       </button>
       <p className="caption">
-        Opens your email app. Messages are sent only when you send the draft; no
-        direct-send service is connected.
+        {emailReady
+          ? 'Sends directly to my inbox. You can also '
+          : 'The form is temporarily unavailable. You can '}
+        <a href={`mailto:${profile.email}`}>email me directly</a>.
       </p>
       <p className="form-status" role="status">
         {status}
